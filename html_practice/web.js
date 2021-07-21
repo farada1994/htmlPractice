@@ -91,7 +91,7 @@ const murphList = murphObjectArray.map((workout) => {
    console.log(workout.id);
 
    murphArticle.innerHTML = `
-   <h1 class="murph_name">Workout Plan</h1>
+   <h3 class="murph_name">Workout Plan</h3>
    <ul class="workout__specs" id="hmm">
       <li class="workout__diff">Difficulty:<span> ${workout.diff} </span></li>
       <li class="workout__length">Length:<span> ${workout.length} </span></li>
