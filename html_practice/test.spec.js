@@ -1,5 +1,6 @@
 /// <reference types = "cypress" />
 
+
 describe ("the first few functionalities", () => {
     beforeEach(() => {
         cy.visit('http://127.0.0.1:5500/practice.html')
@@ -21,5 +22,20 @@ describe ("the first few functionalities", () => {
     })
     it('mapped arrays should not be visible', () => {
         cy.get('h3').should('not.be.visible')
+    })
+    it('explicit assertion test', () => {
+        const labelText = Cypress.$('.diffLabel').text()
+        expect(labelText).to.equal(labelText)
+        expect(labelText).to.deep.equal("Choose a difficulty level")
+        expect(labelText).to.match(/level$/)
+    })
+    it('throw error', () => {
+        cy.get('.title').should(($h1) => {
+            const headerName = $h1[0].className
+
+            if (!headerName.match(/title/)) {
+                throw new Error(`Could not find the page title in ${headerName}`)
+            }
+        })
     })
 })
