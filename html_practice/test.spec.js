@@ -38,4 +38,14 @@ describe ("the first few functionalities", () => {
             }
         })
     })
+    it('invoke shenanigans', () => {
+        cy.get('h2').should('be.visible')
+        .invoke('hide')
+        .should('be.hidden')
+    })
+    it('scrolling on the page', () => {
+        cy.scrollTo('bottom', {duration: 1000})
+        cy.scrollTo('top', {duration: 1000})
+        cy.get('.vod').scrollIntoView({duration: 1000})
+    })
 })
