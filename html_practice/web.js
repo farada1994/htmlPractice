@@ -83,12 +83,10 @@ const murphHard = new Exercise (
 
 
 const murphObjectArray = [murph, murphEasy, murphMedium, murphHard];
-console.log(murphObjectArray);
 const murphList = murphObjectArray.map((workout) => {
    let murphArticle = document.createElement("article");
    murphArticle.classList.add("workout");
    murphArticle.setAttribute("id", workout.id);
-   console.log(workout.id);
 
    murphArticle.innerHTML = `
    <h3 class="murph_name">Workout Plan</h3>
