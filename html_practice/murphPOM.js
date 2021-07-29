@@ -33,6 +33,9 @@ class Murphelements {
             if (stuffName === '') {
                 throw new Error(`Could not find the class in ${value}`)
             }
+            else {
+                console.log(`Class for ${value} exists`)
+            }
         })
         return this
     }
