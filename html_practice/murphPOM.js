@@ -34,9 +34,17 @@ class Murphelements {
                 throw new Error(`Could not find the class in ${value}`)
             }
             else {
-                console.log(`Class for ${value} exists`)
+                console.log(`Class for ${value} exists: ${stuffName}`)
             }
         })
+        return this
+    }
+    scrolling(value, value2) {
+        cy.scrollTo(value, {duration: value2})
+        return this
+    }
+    scrollonElement(value, value2) {
+        const elementScroll = cy.get(value).scrollIntoView({duration: value2})
         return this
     }
 
